@@ -31,6 +31,10 @@ export default function SplashScreen({ navigation }) {
         color="black"
         style={styles.btn}
         onPress={() => navigation.navigate('SignIn')}
+        icon="arrow-right"
+        contentStyle={styles.btnIcon}
+        uppercase={false}
+        labelStyle={styles.btnLabel}
       >
         Get Started
       </Button>
@@ -67,5 +71,12 @@ const styles = StyleSheet.create({
   },
   splashImage: {
     backgroundColor: 'orange',
+  },
+  btnIcon: {
+    flexDirection: 'row-reverse',
+  },
+  btnLabel: {
+    fontSize: 18,
+    fontWeight: '100',
   },
 });

@@ -1,6 +1,13 @@
 import * as React from 'react';
 import { SafeAreaView, StyleSheet, View, Platform } from 'react-native';
-import { Button, Appbar, Divider, TextInput } from 'react-native-paper';
+import {
+  Button,
+  Appbar,
+  Divider,
+  TextInput,
+  Headline,
+  Caption,
+} from 'react-native-paper';
 
 export default function SignIn({ navigation }) {
   return (
@@ -24,18 +31,23 @@ export default function SignIn({ navigation }) {
       </SafeAreaView>
       <SafeAreaView style={styles.container}>
         <View style={styles.inputContainer}>
+          <View style={styles.textContainer}>
+            <Headline style={styles.headingText}>Welcome Back</Headline>
+            <Caption>We’ve missed you</Caption>
+          </View>
           <TextInput
             mode="outlined"
             placeholder="Email"
             theme={{
               colors: { primary: '#FA9B0B', underlineColor: 'transparent' },
             }}
+            style={styles.input}
           />
         </View>
         <View style={styles.inputContainer}>
           <TextInput
             mode="outlined"
-            placeholder="Email"
+            placeholder="Password"
             theme={{
               colors: { primary: '#FA9B0B', underlineColor: 'transparent' },
             }}
@@ -46,8 +58,14 @@ export default function SignIn({ navigation }) {
         <Button
           mode="contained"
           onPress={() => navigation.push('SplashScreen')}
+          color="#FA9B0B"
+          icon="arrow-right"
+          contentStyle={styles.signInBtnContent}
+          style={styles.signInBtn}
+          uppercase={false}
+          labelStyle={styles.signInBtnLabel}
         >
-          Go back
+          Sign in
         </Button>
       </SafeAreaView>
     </>
@@ -58,7 +76,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    backgroundColor: '#F8F8F8',
+    paddingTop: 100,
   },
   header: {
     backgroundColor: '#FFFFFF',
@@ -69,14 +89,34 @@ const styles = StyleSheet.create({
     borderBottomColor: '#FA9B0B',
   },
   appBarTitle: {
-    padding: 5,
-    fontWeight: 'bold',
+    // padding: 5,
+    // fontWeight: 'bold',
   },
   inputContainer: {
-    width: '100%',
+    width: '80%',
     marginBottom: 30,
   },
   input: {
-    borderRadius: 10,
+    backgroundColor: '#FFFFFF',
+    color: 'black',
+    fontWeight: 'bold',
+  },
+  textContainer: {
+    paddingBottom: 40,
+  },
+  headingText: {
+    fontSize: 32,
+    color: 'black',
+  },
+  signInBtnContent: {
+    flexDirection: 'row-reverse',
+    justifyContent: 'space-between',
+  },
+  signInBtn: {
+    width: '80%',
+    padding: 10,
+  },
+  signInBtnLabel: {
+    fontSize: 16,
   },
 });
