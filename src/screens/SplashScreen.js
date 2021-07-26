@@ -23,7 +23,7 @@ export default function SplashScreen({ navigation }) {
       </View>
       <View>
         <Subheading style={styles.subheading}>
-          Search local resturants around you for the best deals
+          Search local resturants around you for the best meals
         </Subheading>
       </View>
       <Button
