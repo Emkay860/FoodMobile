@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import SplashScreen from './src/screens/SplashScreen';
 import SignIn from './src/screens/SignIn';
+import Register from './src/screens/Register';
 
 const Stack = createStackNavigator();
 
@@ -23,6 +24,11 @@ export default function App() {
           <Stack.Screen
             name="SignIn"
             component={SignIn}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Register"
+            component={Register}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

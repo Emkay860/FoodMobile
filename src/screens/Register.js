@@ -9,7 +9,7 @@ import {
   Paragraph,
 } from 'react-native-paper';
 
-export default function SignIn({ navigation }) {
+export default function Register({ navigation }) {
   return (
     <>
       <SafeAreaView>
@@ -18,22 +18,33 @@ export default function SignIn({ navigation }) {
           <Appbar.Content
             title="Sign in"
             color="black"
-            titleStyle={[styles.appBarTitle, styles.active]}
+            titleStyle={[styles.appBarTitle]}
             style={styles.appBarNav}
+            onPress={() => navigation.navigate('SignIn')}
           />
           <Appbar.Content
             title="Register"
             color="black"
-            titleStyle={styles.appBarTitle}
+            titleStyle={[styles.appBarTitle, styles.active]}
             style={styles.appBarNav}
-            onPress={() => navigation.navigate('Register')}
           />
         </Appbar.Header>
       </SafeAreaView>
       <SafeAreaView style={styles.container}>
         <View style={styles.textContainer}>
-          <Headline style={styles.headingText}>Welcome Back</Headline>
-          <Caption style={styles.captionText}>We’ve missed you</Caption>
+          <Headline style={styles.headingText}>Hello There</Headline>
+          <Caption style={styles.captionText}>Welcome on board</Caption>
+        </View>
+        <View style={styles.inputContainer}>
+          <TextInput
+            mode="outlined"
+            placeholder="Name"
+            theme={{
+              colors: { primary: '#FA9B0B', underlineColor: 'transparent' },
+              roundness: 8,
+            }}
+            style={styles.input}
+          />
         </View>
         <View style={styles.inputContainer}>
           <TextInput
@@ -70,11 +81,6 @@ export default function SignIn({ navigation }) {
         >
           Sign in
         </Button>
-        <View style={styles.forgotPasswordContainer}>
-          <Paragraph style={styles.forgotPasswordText}>
-            Forgot password?
-          </Paragraph>
-        </View>
       </SafeAreaView>
     </>
   );
@@ -104,14 +110,6 @@ const styles = StyleSheet.create({
   },
   captionText: {
     fontSize: 16,
-  },
-  forgotPasswordContainer: {
-    alignItems: 'flex-end',
-    width: '80%',
-    paddingTop: 10,
-  },
-  forgotPasswordText: {
-    fontWeight: 'bold',
   },
   inputContainer: {
     width: '80%',
