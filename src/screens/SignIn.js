@@ -18,14 +18,15 @@ export default function SignIn({ navigation }) {
           <Appbar.Content
             title="Sign in"
             color="black"
-            titleStyle={styles.appBarTitle}
+            titleStyle={[styles.appBarTitle, styles.active]}
             style={styles.appBarNav}
           />
-          <Divider />
           <Appbar.Content
             title="Register"
             color="black"
             titleStyle={styles.appBarTitle}
+            style={styles.appBarNav}
+            onPress={() => navigation.navigate('Register')}
           />
         </Appbar.Header>
       </SafeAreaView>
@@ -85,12 +86,16 @@ const styles = StyleSheet.create({
   },
   appBarNav: {
     alignItems: 'center',
-    borderBottomWidth: 3,
-    borderBottomColor: '#FA9B0B',
+    // borderBottomWidth: 3,
+    // borderBottomColor: '#FA9B0B',
   },
   appBarTitle: {
-    // padding: 5,
-    // fontWeight: 'bold',
+    padding: 5,
+    fontSize: 16,
+  },
+  active: {
+    borderBottomWidth: 3,
+    borderBottomColor: '#FA9B0B',
   },
   inputContainer: {
     width: '80%',
