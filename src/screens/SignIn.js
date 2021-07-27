@@ -55,6 +55,8 @@ export default function SignIn({ navigation }) {
               roundness: 8,
             }}
             style={styles.input}
+            textContentType="password"
+            secureTextEntry={true}
           />
         </View>
 
