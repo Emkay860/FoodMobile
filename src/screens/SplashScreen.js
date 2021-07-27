@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: 'orange',
     paddingLeft: 20,
+    paddingRight: 20,
   },
   headline: {
     fontSize: 60,
