@@ -7,6 +7,7 @@ import {
   TextInput,
   Headline,
   Caption,
+  Paragraph,
 } from 'react-native-paper';
 
 export default function SignIn({ navigation }) {
@@ -14,7 +15,7 @@ export default function SignIn({ navigation }) {
     <>
       <SafeAreaView>
         <Appbar.Header style={styles.header}>
-          <Appbar.BackAction />
+          <Appbar.BackAction onPress={() => navigation.push('SplashScreen')} />
           <Appbar.Content
             title="Sign in"
             color="black"
@@ -34,13 +35,14 @@ export default function SignIn({ navigation }) {
         <View style={styles.inputContainer}>
           <View style={styles.textContainer}>
             <Headline style={styles.headingText}>Welcome Back</Headline>
-            <Caption>We’ve missed you</Caption>
+            <Caption style={styles.captionText}>We’ve missed you</Caption>
           </View>
           <TextInput
             mode="outlined"
             placeholder="Email"
             theme={{
               colors: { primary: '#FA9B0B', underlineColor: 'transparent' },
+              roundness: 8,
             }}
             style={styles.input}
           />
@@ -51,6 +53,7 @@ export default function SignIn({ navigation }) {
             placeholder="Password"
             theme={{
               colors: { primary: '#FA9B0B', underlineColor: 'transparent' },
+              roundness: 8,
             }}
             style={styles.input}
           />
@@ -68,6 +71,11 @@ export default function SignIn({ navigation }) {
         >
           Sign in
         </Button>
+        <View style={styles.forgotPasswordContainer}>
+          <Paragraph style={styles.forgotPasswordText}>
+            Forgot password?
+          </Paragraph>
+        </View>
       </SafeAreaView>
     </>
   );
@@ -95,9 +103,20 @@ const styles = StyleSheet.create({
     borderBottomWidth: 3,
     borderBottomColor: '#FA9B0B',
   },
+  captionText: {
+    fontSize: 16,
+  },
+  forgotPasswordContainer: {
+    alignItems: 'flex-end',
+    width: '80%',
+    paddingTop: 10,
+  },
+  forgotPasswordText: {
+    fontWeight: 'bold',
+  },
   inputContainer: {
     width: '80%',
-    marginBottom: 30,
+    marginBottom: 20,
   },
   input: {
     backgroundColor: '#FFFFFF',
@@ -117,7 +136,8 @@ const styles = StyleSheet.create({
   },
   signInBtn: {
     width: '80%',
-    padding: 10,
+    padding: 5,
+    borderRadius: 8,
   },
   signInBtnLabel: {
     fontSize: 16,
