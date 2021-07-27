@@ -62,7 +62,7 @@ export default function SignIn({ navigation }) {
 
         <Button
           mode="contained"
-          onPress={() => navigation.push('SplashScreen')}
+          onPress={() => navigation.push('Home')}
           color="#FA9B0B"
           icon="arrow-right"
           contentStyle={styles.signInBtnContent}
