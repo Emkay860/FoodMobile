@@ -1,5 +1,12 @@
 import * as React from 'react';
-import { SafeAreaView, StyleSheet, View } from 'react-native';
+import {
+  KeyboardAvoidingView,
+  SafeAreaView,
+  StyleSheet,
+  View,
+  Platform,
+  ScrollView,
+} from 'react-native';
 import {
   Button,
   Appbar,
@@ -8,6 +15,7 @@ import {
   Caption,
   Paragraph,
 } from 'react-native-paper';
+import { Header } from '@react-navigation/stack';
 
 export default function Register({ navigation }) {
   return (
@@ -30,58 +38,68 @@ export default function Register({ navigation }) {
           />
         </Appbar.Header>
       </SafeAreaView>
-      <SafeAreaView style={styles.container}>
-        <View style={styles.textContainer}>
-          <Headline style={styles.headingText}>Hello There</Headline>
-          <Caption style={styles.captionText}>Welcome on board</Caption>
-        </View>
-        <View style={styles.inputContainer}>
-          <TextInput
-            mode="outlined"
-            placeholder="Name"
-            theme={{
-              colors: { primary: '#FA9B0B', underlineColor: 'transparent' },
-              roundness: 8,
-            }}
-            style={styles.input}
-          />
-        </View>
-        <View style={styles.inputContainer}>
-          <TextInput
-            mode="outlined"
-            placeholder="Email"
-            theme={{
-              colors: { primary: '#FA9B0B', underlineColor: 'transparent' },
-              roundness: 8,
-            }}
-            style={styles.input}
-          />
-        </View>
-        <View style={styles.inputContainer}>
-          <TextInput
-            mode="outlined"
-            placeholder="Password"
-            theme={{
-              colors: { primary: '#FA9B0B', underlineColor: 'transparent' },
-              roundness: 8,
-            }}
-            style={styles.input}
-          />
-        </View>
 
-        <Button
-          mode="contained"
-          onPress={() => navigation.push('SplashScreen')}
-          color="#FA9B0B"
-          icon="arrow-right"
-          contentStyle={styles.signInBtnContent}
-          style={styles.signInBtn}
-          uppercase={false}
-          labelStyle={styles.signInBtnLabel}
+      <ScrollView>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === 'ios' ? 'padding' : null}
+          style={styles.container}
         >
-          Sign in
-        </Button>
-      </SafeAreaView>
+          <View style={styles.innerContainer}>
+            <View style={styles.textContainer}>
+              <Headline style={styles.headingText}>Hello There</Headline>
+              <Caption style={styles.captionText}>Welcome on board</Caption>
+            </View>
+            <View style={styles.inputContainer}>
+              <TextInput
+                mode="outlined"
+                placeholder="Name"
+                theme={{
+                  colors: { primary: '#FA9B0B', underlineColor: 'transparent' },
+                  roundness: 8,
+                }}
+                style={styles.input}
+              />
+            </View>
+            <View style={styles.inputContainer}>
+              <TextInput
+                mode="outlined"
+                placeholder="Email"
+                theme={{
+                  colors: { primary: '#FA9B0B', underlineColor: 'transparent' },
+                  roundness: 8,
+                }}
+                style={styles.input}
+              />
+            </View>
+            <View style={styles.inputContainer}>
+              <TextInput
+                mode="outlined"
+                placeholder="Password"
+                theme={{
+                  colors: { primary: '#FA9B0B', underlineColor: 'transparent' },
+                  roundness: 8,
+                }}
+                style={styles.input}
+                textContentType="password"
+                secureTextEntry={true}
+              />
+            </View>
+
+            <Button
+              mode="contained"
+              onPress={() => navigation.push('SplashScreen')}
+              color="#FA9B0B"
+              icon="arrow-right"
+              contentStyle={styles.signInBtnContent}
+              style={styles.signInBtn}
+              uppercase={false}
+              labelStyle={styles.signInBtnLabel}
+            >
+              Sign up
+            </Button>
+          </View>
+        </KeyboardAvoidingView>
+      </ScrollView>
     </>
   );
 }
@@ -89,10 +107,13 @@ export default function Register({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    backgroundColor: '#F8F8F8',
     paddingTop: 100,
+  },
+  innerContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    backgroundColor: '#F8F8F8',
   },
   header: {
     backgroundColor: '#FFFFFF',
