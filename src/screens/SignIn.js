@@ -86,8 +86,6 @@ const styles = StyleSheet.create({
   },
   appBarNav: {
     alignItems: 'center',
-    // borderBottomWidth: 3,
-    // borderBottomColor: '#FA9B0B',
   },
   appBarTitle: {
     padding: 5,
