@@ -5,8 +5,11 @@ import {
   ScrollView,
   StyleSheet,
   View,
+  Text,
 } from 'react-native';
 import { Appbar, Headline, IconButton, Searchbar } from 'react-native-paper';
+
+import CardItem from './components/CardItem';
 
 export default function Home({ navigation }) {
   return (
@@ -35,12 +38,26 @@ export default function Home({ navigation }) {
             />
           </View>
         </View>
+        <ScrollView
+          horizontal={true}
+          scrollEnabled={true}
+          // contentContainerStyle={styles.cardContainer}
+          style={styles.scrollView}
+        >
+          <CardItem />
+          <CardItem />
+          <CardItem />
+          <CardItem />
+        </ScrollView>
       </View>
     </>
   );
 }
 
 const styles = StyleSheet.create({
+  cardContainer: {
+    flex: 1,
+  },
   container: {
     flex: 1,
     alignItems: 'flex-start',
@@ -75,5 +92,8 @@ const styles = StyleSheet.create({
   },
   innerSearchBarContainer: {
     width: '80%',
+  },
+  scrollView: {
+    // flex: 1,
   },
 });
