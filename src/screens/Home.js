@@ -38,16 +38,14 @@ export default function Home({ navigation }) {
             />
           </View>
         </View>
-        <ScrollView
-          horizontal={true}
-          scrollEnabled={true}
-          // contentContainerStyle={styles.cardContainer}
-          style={styles.scrollView}
-        >
-          <CardItem />
-          <CardItem />
-          <CardItem />
-          <CardItem />
+        <ScrollView style={styles.verticalScrollViewContainer}>
+          <ScrollView horizontal={true} style={styles.cardScrollView}>
+            <CardItem />
+            <CardItem />
+            <CardItem />
+            <CardItem />
+            <CardItem />
+          </ScrollView>
         </ScrollView>
       </View>
     </>
@@ -55,8 +53,11 @@ export default function Home({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  cardContainer: {
+  verticalScrollViewContainer: {
     flex: 1,
+    width: '100%',
+    paddingBottom: 50,
+    marginBottom: 50,
   },
   container: {
     flex: 1,
@@ -93,7 +94,5 @@ const styles = StyleSheet.create({
   innerSearchBarContainer: {
     width: '80%',
   },
-  scrollView: {
-    // flex: 1,
-  },
+  cardScrollView: {},
 });

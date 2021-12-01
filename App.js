@@ -14,7 +14,7 @@ export default function App() {
   return (
     <PaperProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="SplashScreen">
+        <Stack.Navigator initialRouteName="Home">
           <Stack.Screen
             name="SplashScreen"
             component={SplashScreen}
