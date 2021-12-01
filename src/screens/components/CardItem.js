@@ -1,6 +1,13 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
+import { StyleSheet, View, Text } from 'react-native';
+import {
+  Avatar,
+  Button,
+  Card,
+  Title,
+  Paragraph,
+  Caption,
+} from 'react-native-paper';
 
 export default function CardItem() {
   return (
@@ -10,14 +17,23 @@ export default function CardItem() {
         style={styles.img}
         source={require('./../../../assets/food.jpeg')}
       />
-      <Card style={styles.cardBody}>
+      <Card style={styles.cardBody} elevation={4} mode="elevated">
         <Card.Content>
-          <Title>Card title</Title>
-          <Paragraph>Card content</Paragraph>
+          <Title>Chicken Pasta</Title>
+          <Caption>Caption</Caption>
+          <Paragraph style={styles.price}>
+            <Text style={styles.currency}>NGN: </Text>1,345.99
+          </Paragraph>
         </Card.Content>
         <Card.Actions>
-          <Button>Cancel</Button>
-          <Button>Ok</Button>
+          <Button
+            mode="contained"
+            color="#FA9905"
+            labelStyle={{ color: 'white' }}
+            style={styles.btnOder}
+          >
+            Order
+          </Button>
         </Card.Actions>
       </Card>
     </View>
@@ -27,23 +43,21 @@ export default function CardItem() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // borderWidth: 3,
-    // borderColor: 'red',
-    // height: 600,
-    width: 200,
+    width: 250,
     marginRight: 10,
     alignItems: 'center',
     padding: 10,
+    marginBottom: 20,
   },
 
   cardBody: {
-    // paddingTop: 80,
-    height: '100%',
+    height: '80%',
     width: '100%',
     paddingTop: 70,
     paddingLeft: 10,
     paddingRight: 10,
     paddingBottom: 10,
+    borderRadius: 10,
   },
 
   img: {
@@ -53,5 +67,17 @@ const styles = StyleSheet.create({
     zIndex: 1,
     borderRadius: 100,
     backgroundColor: 'rgba(255, 255, 255, 1)',
+  },
+  currency: {
+    fontSize: 10,
+    color: '#FA9905',
+  },
+  price: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  btnOder: {
+    paddingLeft: 8,
+    paddingRight: 8,
   },
 });

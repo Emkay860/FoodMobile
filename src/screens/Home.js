@@ -26,9 +26,12 @@ export default function Home({ navigation }) {
           <Headline style={styles.headingText}>Amazing food 😋</Headline>
         </View>
         <View style={styles.searchBarContainer}>
-          <View style={styles.innerSearchBarContainer}>
-            <Searchbar placeholder="Search food..." />
-          </View>
+          <Searchbar
+            placeholder="Search food..."
+            style={styles.innerSearchBarContainer}
+            inputStyle={styles.searchBarInput}
+          />
+
           <View style={styles.iconBtnContainer}>
             <IconButton
               icon="tune-vertical"
@@ -54,15 +57,16 @@ export default function Home({ navigation }) {
 
 const styles = StyleSheet.create({
   verticalScrollViewContainer: {
-    flex: 1,
+    // flex: 1,
     width: '100%',
     paddingBottom: 50,
-    marginBottom: 50,
+    marginTop: 50,
+    marginBottom: 80,
   },
   container: {
     flex: 1,
-    alignItems: 'flex-start',
-    justifyContent: 'center',
+    alignItems: 'space-between',
+    // justifyContent: 'center',
     padding: 20,
   },
   header: {
@@ -94,5 +98,7 @@ const styles = StyleSheet.create({
   innerSearchBarContainer: {
     width: '80%',
   },
-  cardScrollView: {},
+  cardScrollView: {
+    paddingBottom: 50,
+  },
 });
