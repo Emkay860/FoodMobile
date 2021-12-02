@@ -66,16 +66,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'space-between',
-    // justifyContent: 'center',
     padding: 20,
   },
   header: {
     backgroundColor: '#F8F8F8',
   },
   headingText: {
-    fontSize: 32,
+    fontSize: 28,
     color: 'black',
-    marginTop: 20,
+    marginTop: 10,
   },
   iconBtnContainer: {
     width: '15%',
@@ -99,6 +98,6 @@ const styles = StyleSheet.create({
     width: '80%',
   },
   cardScrollView: {
-    paddingBottom: 50,
+    paddingBottom: 10,
   },
 });

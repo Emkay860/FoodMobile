@@ -43,7 +43,7 @@ export default function CardItem() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: 250,
+    width: 230,
     marginRight: 10,
     alignItems: 'center',
     padding: 10,
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   cardBody: {
     height: '80%',
     width: '100%',
-    paddingTop: 70,
+    paddingTop: 90,
     paddingLeft: 10,
     paddingRight: 10,
     paddingBottom: 10,
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   img: {
     height: 150,
     width: 150,
-    marginBottom: -70,
+    marginBottom: -90,
     zIndex: 1,
     borderRadius: 100,
     backgroundColor: 'rgba(255, 255, 255, 1)',
