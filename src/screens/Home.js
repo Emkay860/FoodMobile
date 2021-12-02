@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
     width: '80%',
   },
   cardScrollView: {
+    paddingTop: 30,
     paddingBottom: 10,
   },
 });

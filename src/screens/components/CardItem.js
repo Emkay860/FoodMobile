@@ -17,7 +17,7 @@ export default function CardItem() {
         style={styles.img}
         source={require('./../../../assets/food.jpeg')}
       />
-      <Card style={styles.cardBody} elevation={4} mode="elevated">
+      <Card style={styles.cardBody} elevation={8} mode="elevated">
         <Card.Content>
           <Title>Chicken Pasta</Title>
           <Caption>Caption</Caption>
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10,
     paddingBottom: 10,
-    borderRadius: 10,
+    borderRadius: 5,
   },
 
   img: {
