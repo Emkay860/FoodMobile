@@ -15,10 +15,10 @@ export default function Home({ navigation }) {
   return (
     <>
       <SafeAreaView>
-        <Appbar.Header style={styles.header}>
+        {/* <Appbar.Header style={styles.header}>
           <Appbar.Content title="Home" />
           <Appbar.Action icon="cart-outline" onPress={() => {}} />
-        </Appbar.Header>
+        </Appbar.Header> */}
       </SafeAreaView>
       <View style={styles.container}>
         <View style={styles.textContainer}>
