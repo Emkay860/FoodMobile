@@ -18,26 +18,26 @@ export default function SplashScreen({ navigation }) {
           style={styles.splashImage}
         />
       </View>
-      <View>
+      <View style={styles.subheadingContainer}>
         <Headline style={styles.headline}>Delicious Meals</Headline>
       </View>
-      <View>
+      <View style={styles.subheadingContainer}>
         <Subheading style={styles.subheading}>
           Search local resturants around you for the best meals
         </Subheading>
+        <Button
+          mode="contained"
+          color="black"
+          style={styles.btn}
+          onPress={() => navigation.navigate('SignIn')}
+          icon="arrow-right"
+          contentStyle={styles.btnIcon}
+          uppercase={false}
+          labelStyle={styles.btnLabel}
+        >
+          Get Started
+        </Button>
       </View>
-      <Button
-        mode="contained"
-        color="black"
-        style={styles.btn}
-        onPress={() => navigation.navigate('SignIn')}
-        icon="arrow-right"
-        contentStyle={styles.btnIcon}
-        uppercase={false}
-        labelStyle={styles.btnLabel}
-      >
-        Get Started
-      </Button>
     </View>
   );
 }
@@ -45,7 +45,7 @@ export default function SplashScreen({ navigation }) {
 const styles = StyleSheet.create({
   btn: {
     padding: 16,
-    width: '60%',
+    width: '70%',
     marginTop: 10,
   },
   container: {
@@ -61,9 +61,15 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     lineHeight: 60,
     color: '#3D0B0B',
+    marginTop: 50,
   },
   subheading: {
     fontSize: 18,
+  },
+  subheadingContainer: {
+    alignItems: 'center',
+    // marginBottom: 50,
+    width: '100%',
   },
   splashImageContainer: {
     alignItems: 'center',

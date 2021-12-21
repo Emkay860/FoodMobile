@@ -7,6 +7,7 @@ import SplashScreen from './src/screens/SplashScreen';
 import SignIn from './src/screens/SignIn';
 import Register from './src/screens/Register';
 import Home from './src/screens/Home';
+import BottomNavBar from './src/screens/components/BottomNavBar';
 
 const Stack = createStackNavigator();
 
@@ -14,7 +15,7 @@ export default function App() {
   return (
     <PaperProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home">
+        <Stack.Navigator initialRouteName="SplashScreen">
           <Stack.Screen
             name="SplashScreen"
             component={SplashScreen}
@@ -34,7 +35,7 @@ export default function App() {
           />
           <Stack.Screen
             name="Home"
-            component={Home}
+            component={BottomNavBar}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
