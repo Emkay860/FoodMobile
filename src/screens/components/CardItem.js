@@ -13,13 +13,13 @@ export default function CardItem() {
   return (
     <View style={styles.container}>
       <Avatar.Image
-        size={150}
+        size={110}
         style={styles.img}
         source={require('./../../../assets/food.jpeg')}
       />
       <Card style={styles.cardBody} elevation={8} mode="elevated">
         <Card.Content>
-          <Title>Chicken Pasta</Title>
+          <Title style={styles.titleStyle}>Chicken Pasta</Title>
           <Caption>Caption</Caption>
           <Paragraph style={styles.price}>
             <Text style={styles.currency}>NGN: </Text>1,345.99
@@ -43,7 +43,7 @@ export default function CardItem() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: 230,
+    width: 180,
     marginRight: 10,
     alignItems: 'center',
     padding: 10,
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   cardBody: {
     height: '80%',
     width: '100%',
-    paddingTop: 90,
+    paddingTop: 50,
     paddingLeft: 10,
     paddingRight: 10,
     paddingBottom: 10,
@@ -61,23 +61,27 @@ const styles = StyleSheet.create({
   },
 
   img: {
-    height: 150,
-    width: 150,
-    marginBottom: -90,
+    height: 120,
+    width: 120,
+    marginBottom: -70,
     zIndex: 1,
     borderRadius: 100,
     backgroundColor: 'rgba(255, 255, 255, 1)',
   },
   currency: {
-    fontSize: 10,
+    fontSize: 8,
     color: '#FA9905',
   },
   price: {
-    fontSize: 18,
+    fontSize: 14,
     fontWeight: 'bold',
   },
   btnOder: {
     paddingLeft: 8,
     paddingRight: 8,
+  },
+  titleStyle: {
+    fontSize: 14,
+    // color: 'red',
   },
 });

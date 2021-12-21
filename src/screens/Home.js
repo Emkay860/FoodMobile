@@ -59,9 +59,9 @@ const styles = StyleSheet.create({
   verticalScrollViewContainer: {
     // flex: 1,
     width: '100%',
-    paddingBottom: 50,
-    marginTop: 50,
-    marginBottom: 80,
+    height: 'auto',
+    // paddingBottom: 50,
+    paddingTop: 50,
   },
   container: {
     flex: 1,
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     width: '80%',
   },
   cardScrollView: {
-    paddingTop: 20,
-    paddingBottom: 10,
+    // paddingTop: 20,
+    // paddingBottom: 10,
   },
 });
