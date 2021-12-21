@@ -8,6 +8,10 @@ import {
   Caption,
   Paragraph,
 } from 'react-native-paper';
+import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
+
+import ImageChooser from './ImageChooser';
+
 function CreateMenuItem() {
   return (
     <>
@@ -26,13 +30,14 @@ function CreateMenuItem() {
             titleStyle={styles.appBarTitle}
             style={styles.appBarNav}
             onPress={() => navigation.navigate('Register')}
-          /> */}
+        /> */}
         </Appbar.Header>
       </SafeAreaView>
       <SafeAreaView style={styles.container}>
         <View style={styles.textContainer}>
           <Headline style={styles.headingText}>Create New Item</Headline>
         </View>
+        <ImageChooser />
         <View style={styles.inputContainer}>
           <TextInput
             mode="outlined"
@@ -56,8 +61,20 @@ function CreateMenuItem() {
             textContentType="password"
             secureTextEntry={true}
           />
+        </View>{' '}
+        <View style={styles.inputContainer}>
+          <TextInput
+            mode="outlined"
+            placeholder="Description"
+            theme={{
+              colors: { primary: '#FA9B0B', underlineColor: 'transparent' },
+              roundness: 8,
+            }}
+            style={styles.input}
+            multiline
+            numberOfLines={4}
+          />
         </View>
-
         <Button
           mode="contained"
           onPress={() => navigation.push('Home')}
@@ -81,7 +98,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     backgroundColor: '#F8F8F8',
-    paddingTop: 100,
+    paddingTop: 20,
+    paddingBottom: 100,
   },
   header: {
     backgroundColor: '#FFFFFF',
@@ -99,14 +117,6 @@ const styles = StyleSheet.create({
   },
   captionText: {
     fontSize: 16,
-  },
-  forgotPasswordContainer: {
-    alignItems: 'flex-end',
-    width: '80%',
-    paddingTop: 10,
-  },
-  forgotPasswordText: {
-    fontWeight: 'bold',
   },
   inputContainer: {
     width: '80%',
