@@ -12,12 +12,12 @@ import {
 export default function CardItem() {
   return (
     <View style={styles.container}>
-      <Avatar.Image
-        size={110}
-        style={styles.img}
-        source={require('./../../../assets/food.jpeg')}
-      />
       <Card style={styles.cardBody} elevation={8} mode="elevated">
+        <Avatar.Image
+          size={130}
+          style={styles.img}
+          source={require('./../../../assets/food.jpeg')}
+        />
         <Card.Content>
           <Title style={styles.titleStyle}>Chicken Pasta</Title>
           <Caption>Caption</Caption>
@@ -58,13 +58,14 @@ const styles = StyleSheet.create({
     paddingRight: 10,
     paddingBottom: 10,
     borderRadius: 8,
+    marginTop: 70,
   },
 
   img: {
     height: 120,
     width: 120,
-    marginBottom: -70,
-    zIndex: 1,
+    marginTop: -110,
+    marginLeft: 4,
     borderRadius: 100,
     backgroundColor: 'rgba(255, 255, 255, 1)',
   },
@@ -82,6 +83,7 @@ const styles = StyleSheet.create({
   },
   titleStyle: {
     fontSize: 14,
+    paddingTop: 10,
     // color: 'red',
   },
 });

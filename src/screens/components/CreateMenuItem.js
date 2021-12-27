@@ -25,6 +25,12 @@ export default function Register({ navigation }) {
       <SafeAreaView>
         <Appbar.Header style={styles.header}>
           <Appbar.BackAction onPress={() => navigation.push('SplashScreen')} />
+          <Appbar.Content
+            subtitle={'Create New Item'}
+            color="black"
+            subtitleStyle={[styles.appBarTitle]}
+            style={styles.headingText}
+          />
         </Appbar.Header>
       </SafeAreaView>
 
@@ -34,9 +40,9 @@ export default function Register({ navigation }) {
           style={styles.container}
         >
           <View style={styles.innerContainer}>
-            <View style={styles.textContainer}>
+            {/* <View style={styles.textContainer}>
               <Headline style={styles.headingText}>Create New Item</Headline>
-            </View>
+            </View> */}
             <ImageChooser />
             <View style={styles.inputContainer}>
               <TextInput
@@ -112,8 +118,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   appBarTitle: {
-    padding: 5,
-    fontSize: 16,
+    paddingBottom: 10,
+    fontSize: 24,
   },
   active: {
     borderBottomWidth: 3,
@@ -136,8 +142,8 @@ const styles = StyleSheet.create({
     width: '80%',
   },
   headingText: {
-    fontSize: 32,
     color: 'black',
+    paddingLeft: 30,
   },
   signInBtnContent: {
     flexDirection: 'row-reverse',

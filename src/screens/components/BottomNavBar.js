@@ -39,7 +39,7 @@ const BottomNavBar = () => {
 
 const styles = StyleSheet.create({
   navbar: {
-    borderRadius: 20,
+    // borderRadius: 20,
   },
 });
 
