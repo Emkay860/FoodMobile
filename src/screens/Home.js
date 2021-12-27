@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    alignItems: 'space-between',
+    // alignItems: 'space-between',
     padding: 20,
   },
   header: {
@@ -79,7 +79,6 @@ const styles = StyleSheet.create({
   iconBtnContainer: {
     width: '15%',
     marginLeft: 10,
-    // padding: 5,
     backgroundColor: '#FA9905',
     alignItems: 'center',
     borderRadius: 10,
@@ -97,8 +96,5 @@ const styles = StyleSheet.create({
   innerSearchBarContainer: {
     width: '80%',
   },
-  cardScrollView: {
-    // paddingTop: 20,
-    // paddingBottom: 10,
-  },
+  cardScrollView: {},
 });

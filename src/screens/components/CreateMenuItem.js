@@ -1,5 +1,12 @@
-import React from 'react';
-import { SafeAreaView, StyleSheet, View } from 'react-native';
+import * as React from 'react';
+import {
+  KeyboardAvoidingView,
+  SafeAreaView,
+  StyleSheet,
+  View,
+  Platform,
+  ScrollView,
+} from 'react-native';
 import {
   Button,
   Appbar,
@@ -8,86 +15,80 @@ import {
   Caption,
   Paragraph,
 } from 'react-native-paper';
-import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
+import { Header } from '@react-navigation/stack';
 
 import ImageChooser from './ImageChooser';
 
-function CreateMenuItem() {
+export default function Register({ navigation }) {
   return (
     <>
       <SafeAreaView>
         <Appbar.Header style={styles.header}>
           <Appbar.BackAction onPress={() => navigation.push('SplashScreen')} />
-          {/* <Appbar.Content
-            title="Sign in"
-            color="black"
-            titleStyle={[styles.appBarTitle, styles.active]}
-            style={styles.appBarNav}
-          />
-          <Appbar.Content
-            title="Register"
-            color="black"
-            titleStyle={styles.appBarTitle}
-            style={styles.appBarNav}
-            onPress={() => navigation.navigate('Register')}
-        /> */}
         </Appbar.Header>
       </SafeAreaView>
-      <SafeAreaView style={styles.container}>
-        <View style={styles.textContainer}>
-          <Headline style={styles.headingText}>Create New Item</Headline>
-        </View>
-        <ImageChooser />
-        <View style={styles.inputContainer}>
-          <TextInput
-            mode="outlined"
-            placeholder="Title"
-            theme={{
-              colors: { primary: '#FA9B0B', underlineColor: 'transparent' },
-              roundness: 8,
-            }}
-            style={styles.input}
-          />
-        </View>
-        <View style={styles.inputContainer}>
-          <TextInput
-            mode="outlined"
-            placeholder="Price"
-            theme={{
-              colors: { primary: '#FA9B0B', underlineColor: 'transparent' },
-              roundness: 8,
-            }}
-            style={styles.input}
-            textContentType="password"
-            secureTextEntry={true}
-          />
-        </View>{' '}
-        <View style={styles.inputContainer}>
-          <TextInput
-            mode="outlined"
-            placeholder="Description"
-            theme={{
-              colors: { primary: '#FA9B0B', underlineColor: 'transparent' },
-              roundness: 8,
-            }}
-            style={styles.input}
-            multiline
-            numberOfLines={4}
-          />
-        </View>
-        <Button
-          mode="contained"
-          onPress={() => navigation.push('Home')}
-          color="#FA9B0B"
-          icon="plus"
-          contentStyle={styles.signInBtnContent}
-          style={styles.signInBtn}
-          uppercase={false}
-          labelStyle={styles.signInBtnLabel}
+
+      <ScrollView>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === 'ios' ? 'padding' : null}
+          style={styles.container}
         >
-          Add Item
-        </Button>
-      </SafeAreaView>
+          <View style={styles.innerContainer}>
+            <View style={styles.textContainer}>
+              <Headline style={styles.headingText}>Create New Item</Headline>
+            </View>
+            <ImageChooser />
+            <View style={styles.inputContainer}>
+              <TextInput
+                mode="outlined"
+                placeholder="Title"
+                theme={{
+                  colors: { primary: '#FA9B0B', underlineColor: 'transparent' },
+                  roundness: 8,
+                }}
+                style={styles.input}
+              />
+            </View>
+            <View style={styles.inputContainer}>
+              <TextInput
+                mode="outlined"
+                placeholder="Price"
+                theme={{
+                  colors: { primary: '#FA9B0B', underlineColor: 'transparent' },
+                  roundness: 8,
+                }}
+                style={styles.input}
+                secureTextEntry={true}
+              />
+            </View>
+            <View style={styles.inputContainer}>
+              <TextInput
+                mode="outlined"
+                placeholder="Description"
+                theme={{
+                  colors: { primary: '#FA9B0B', underlineColor: 'transparent' },
+                  roundness: 8,
+                }}
+                style={styles.input}
+                multiline
+                numberOfLines={4}
+              />
+            </View>
+            <Button
+              mode="contained"
+              onPress={() => navigation.push('Home')}
+              color="#FA9B0B"
+              icon="plus"
+              contentStyle={styles.signInBtnContent}
+              style={styles.signInBtn}
+              uppercase={false}
+              labelStyle={styles.signInBtnLabel}
+            >
+              Add Item
+            </Button>
+          </View>
+        </KeyboardAvoidingView>
+      </ScrollView>
     </>
   );
 }
@@ -95,11 +96,14 @@ function CreateMenuItem() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    backgroundColor: '#F8F8F8',
     paddingTop: 20,
-    paddingBottom: 100,
+    paddingBottom: 40,
+  },
+  innerContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    backgroundColor: '#F8F8F8',
   },
   header: {
     backgroundColor: '#FFFFFF',
@@ -148,5 +152,3 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 });
-
-export default CreateMenuItem;
